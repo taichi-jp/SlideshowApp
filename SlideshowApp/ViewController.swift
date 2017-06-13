@@ -88,12 +88,14 @@ class ViewController: UIViewController {
         detailViewController.image = list[count]
         
         //訂正
-        startButton.setTitle("再生", for: .normal)
-        self.timer.invalidate()
-        self.timer = nil
-        backButton.isEnabled = true
-        forwardButton.isEnabled = true
-        isStart = false
+        if isStart == true {
+            startButton.setTitle("再生", for: .normal)
+            self.timer.invalidate()
+            self.timer = nil
+            backButton.isEnabled = true
+            forwardButton.isEnabled = true
+            isStart = false
+        }
     }
     
     //遷移先から戻る
